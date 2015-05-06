@@ -8,4 +8,5 @@ var video = $('#video1').VideoHandler({
     // callback when video is ended
   }
 });
+video.play();
 ```
