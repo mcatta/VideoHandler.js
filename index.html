@@ -21,7 +21,14 @@
 
 		<script type="text/javascript" src="jquery.videohandler.js"></script>
 		<script type="text/javascript">
-			var video = $('#video1').VideoHandler();
+			var video = $('#video1').VideoHandler({
+				onReady: function() {
+					this.play();
+				},
+				onError: function() {
+					alert('Error to load video');
+				}
+			});
 		</script>
 	</body>
 
