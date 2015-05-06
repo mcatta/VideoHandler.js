@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	
+	<head>
+		<title>Video Handler Sample</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<video id="video1" width="600">
+			<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+			<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+			Your browser does not support HTML5 video.
+		</video>
+
+		<script type="text/javascript" src="jquery.videohandler.js"></script>
+		<script type="text/javascript">
+			var video = $('#video1').VideoHandler();
+		</script>
+	</body>
+
+</html>
