@@ -1,6 +1,7 @@
 # VideoHandler.js
 
-Javascript to handle a HTML5 &lt;video> Tag
+Javascript to handle a HTML5 &lt;video> Tag.
+Simple/easy to use.
 
 ```
 var video = $('#video1').VideoHandler({
