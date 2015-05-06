@@ -1,3 +1,7 @@
+/**
+ * Name: Video Handler 0.0.1
+ * Author: Marco Cattaneo @marco_cattaneo
+ */
 (function($) {
 	$.fn.VideoHandler = function(options) {
 
