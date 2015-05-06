@@ -22,8 +22,8 @@
 		if(options.onReady != undefined)
 			this.el.addEventListener('canplay', options.onReady);
 
-		if(options.onComplete != undefined)
-			this.el.addEventListener('ended', options.onComplete);
+		if(options.onEnd != undefined)
+			this.el.addEventListener('ended', options.onEnd);
 
 		if(options.onError != undefined)
 			this.el.addEventListener('error', options.onError);
