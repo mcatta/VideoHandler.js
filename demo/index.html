@@ -4,91 +4,54 @@
 	<head>
 		<title>Video Handler Sample</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-		<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
-		<style type="text/css">
-			body {
-				font-size: 13px;
-				font-family: 'Roboto', sans-serif;
-				font-weight: 300;
-				background-color: #f1f1f1;
-				margin: 0;
-			}
-			a {
-				text-decoration: none;
-				color: #303030;
-				margin-top: 15px;
-				display: inline-block;
-			}
-			video {
-				border-bottom: 1px solid #eee;
-				border-right: 1px solid #eee;
-				display: table;
-				margin: 0 auto;
-			}
-			h1 {
-				text-align: center;
-				font-size: 18px;
-				text-transform: uppercase;
-				font-weight: 300;
-				color: #fff;
-				background-color: #1abc9c;
-				margin: 0;
-				padding: 10px 0;
-				display: block;
-				margin-bottom: 20px;
-				border-bottom: 1px solid #eee;
-			}
-			.quote {
-				text-align: left;
-				width: 400px;
-				margin: 15px auto;
-				display: table;
-				background-color: #fff;
-				padding: 10px;
-				border-bottom: 1px solid #eee;
-				border-right: 1px solid #eee;
-			}
-			.quote span {
-				display: inline-block;
-				width: 15px;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.20.3/css/uikit.min.css">
+		<style type="text/css">pre span { display:inline-block; width: 20px; }</style>
 	</head>
 
 	<body>
-		<h1>Video Handler Sample</h1>
-		<video id="video1" width="600">
-			<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-			<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
-			Your browser does not support HTML5 video.
-		</video>
-		<center>
-			<a href="#" id="play">Play</a> | <a href="#" id="stop">Pause</a>
-		</center>
+		<div class="uk-container uk-container-center">
+			<div class="uk-grid">
+				<div class="uk-width-1-1">
+					<center><h1>Video Handler Sample</h1></center>
+				</div>
+			</div>
+			<div class="uk-grid">
+				<div class="uk-width-1-2">
+					<video id="video1" width="500">
+						<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+						<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+						Your browser does not support HTML5 video.
+					</video>
+					<center>
+						<a href="#" id="play">Play</a> | <a href="#" id="stop">Pause</a>
+					</center>
+				</div>
+				<div class="uk-width-1-2">
+					<pre>
+var video = $('#video1').VideoHandler({
+<span></span>onReady: function() {
+<span></span><span></span>this.play();
+<span></span>},
+<span></span>onEnd: function() {
+<span></span><span></span>alert('Video finished');
+<span></span>},
+<span></span>onError: function() {
+<span></span><span></span>alert('Error to load video');
+<span></span>}
+});
 
-		<div class="quote">
-			var video = $('#video1').VideoHandler({<br/>
-			<span></span>onReady: function() {<br/>
-			<span></span><span></span>this.play();<br/>
-			<span></span>},<br/>
-			<span></span>onEnd: function() {<br/>
-			<span></span><span></span>alert('Video finished');<br/>
-			<span></span>},<br/>
-			<span></span>onError: function() {<br/>
-			<span></span><span></span>alert('Error to load video');<br/>
-			<span></span>}<br/>
-			});<br/>
-			<br/>
-			$('#play').on('click', function() {<br/>
-			<span></span>video.play();<br/>
-			});<br/><br/>
-			$('#stop').on('click', function() {<br/>
-			<span></span>video.pause();<br/>
-			});<br/>
+$('#play').on('click', function() {
+<span></span>video.play();
+});
+$('#stop').on('click', function() {
+<span></span>video.pause();
+});
+					</pre>
+				</div>
+			</div>
 		</div>
-
-		<script type="text/javascript" src="../jquery.videohandler.min.js"></script>
+		
+		<script type="text/javascript" src="../jquery.videohandler.js"></script>
 		<script type="text/javascript">
 			var video = $('#video1').VideoHandler({
 				onReady: function() {

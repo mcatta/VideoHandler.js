@@ -8,15 +8,45 @@
 		this.el = this[0];
 
 		/**
-		 * Functions
+		 * Play video
+		 * @return {[type]} [description]
 		 */
-
 		this.play = function() {
 			this.el.play();
 		}
 
+		/**
+		 * Pause video
+		 * @return {[type]} [description]
+		 */
 		this.pause = function() {
 			this.el.pause();
+		}
+
+		/**
+		 * Go to position and play
+		 * @param  {[type]} seekTo [description]
+		 * @return {[type]}        [description]
+		 */
+		this.seekTo = function(seekTo) {
+
+			if( seekTo == undefined )
+				return
+
+			if( typeof seekTo == 'string' )
+				seekTo = parseInt(seekTo);
+
+			if(seekTo>=0 && seekTo<=getDuration())
+				this.el.currentTime = seekTo;
+			
+		}
+
+		/**
+		 * get video duration
+		 * @return {[type]} [description]
+		 */
+		this.getDuration = function() {
+			return this.el.duration;
 		}
 
 		/**
