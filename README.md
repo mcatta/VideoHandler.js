@@ -1,6 +1,6 @@
 # VideoHandler.js
 
-Javascript to handle a HTML5 &lt;video&gt; Tag.
+Javascript wrapper to handle a HTML5 &lt;video&gt; Tag.
 Simple/easy to use.
 
 Script example:
